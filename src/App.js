@@ -9,9 +9,6 @@ import "./assets/scss/app.scss";
 //Pages
 import Home from "./pages/Home";
 
-//Components
-import Header from "./components/Header";
-
 const App = () => {
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 	const [page, setPage] = useState(0);
@@ -40,9 +37,6 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-
-			<Header />
-
 			{switchPage()}
 		</ThemeProvider>
 	);

@@ -1,0 +1,100 @@
+$border-radius-size: 14px;
+$orange: #ec9b3b;
+$red: #ee5487;
+$green: #82bb30;
+$blue: #4facff;
+
+.leaflet-popup-content-wrapper {
+	width: 75vw;
+	margin: auto 12.5vw;
+	.leaflet-popup-content {
+		width: 100%;
+		margin: auto;
+	}
+}
+
+.card {
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	margin: auto;
+	background: white;
+	border-radius: $border-radius-size + 5;
+	text-align: center;
+	box-shadow: -1px 15px 30px -12px black;
+	z-index: 9999;
+}
+
+.card__image {
+	position: relative;
+	height: 150px;
+	margin-bottom: 35px;
+	border-top-left-radius: $border-radius-size;
+	border-top-right-radius: $border-radius-size;
+}
+
+.card__title {
+	font-size: 20px;
+	color: black;
+	font-weight: 900;
+	margin: 1em auto;
+}
+
+.card__dates {
+	display: inline-flex;
+	margin: 1em auto;
+}
+
+.card__level {
+	color: $orange;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	margin-bottom: 3px;
+}
+
+.card__unit-description {
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.card__unit-stats {
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: $border-radius-size;
+	border-bottom-right-radius: $border-radius-size;
+	background: $orange;
+
+	.one-fourth {
+		width: 25%;
+		float: left;
+		padding: 20px 15px;
+		border-right: 1px solid #bd7c2f;
+	}
+
+	sup {
+		position: absolute;
+		bottom: 4px;
+		font-size: 45%;
+		margin-left: 2px;
+	}
+
+	.stat {
+		position: relative;
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.no-border {
+		border-right: none;
+	}
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
