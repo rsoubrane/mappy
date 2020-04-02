@@ -1,8 +1,6 @@
 $border-radius-size: 14px;
 $orange: #ec9b3b;
 $red: #ee5487;
-$green: #82bb30;
-$blue: #4facff;
 
 .leaflet-popup-content-wrapper {
 	width: 75vw;
@@ -45,7 +43,7 @@ $blue: #4facff;
 	margin: 1em auto;
 }
 
-.card__level {
+.card__category {
 	color: $orange;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -53,12 +51,12 @@ $blue: #4facff;
 	margin-bottom: 3px;
 }
 
-.card__unit-description {
+.card__description {
 	padding: 20px;
 	margin-bottom: 10px;
 }
 
-.card__unit-stats {
+.card__stats {
 	color: white;
 	font-weight: 700;
 	border-bottom-left-radius: $border-radius-size;

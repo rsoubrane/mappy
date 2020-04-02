@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 //Utils
 import axios from "axios";
+import { usePosition } from "use-position";
 
 //MUI
 import { makeStyles, CircularProgress } from "@material-ui/core";
 
 //Components
-import Map from "../../components/Map/Map";
+import Map from "../../components/Map";
 import BottomBar from "./components/BottomBar";
 import Drawer from "../../components/Drawer";
 import Modal from "../../components/Modal";
@@ -36,12 +37,15 @@ export default function Home() {
 	const [query, setQuery] = useState("");
 	const [events, setEvents] = useState([]);
 	const [themes, setThemes] = useState([]);
+	const [address, setAddress] = useState("");
 	const [tags, setTags] = useState([]);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
 
+	const { latitude, longitude, timestamp, accuracy } = usePosition(false);
+
 	useEffect(() => {
-		async function fetchData() {
+		async function fetchEvents() {
 			setLoading(true);
 			try {
 				const res = await axios.get(
@@ -55,8 +59,20 @@ export default function Home() {
 				console.log(error);
 			}
 		}
-		fetchData();
-	}, [query, searchResults]);
+
+		async function fetchPosition() {
+			try {
+				const res = await axios.get(
+					`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=8c68c754598f4c7bb99a319dacc97d15`
+				);
+				if (res.data) setAddress(res.data.results[0].formatted);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+		fetchEvents();
+		if (longitude && latitude && accuracy < 20000) fetchPosition();
+	}, [query, searchResults, latitude, longitude, accuracy, timestamp]);
 
 	const onSearchResultChange = newValue => {
 		if (newValue && newValue !== searchResults) setSearchResults(newValue);
@@ -80,7 +96,14 @@ export default function Home() {
 						<CircularProgress disableShrink className={classes.loading} size={60} />
 					</div>
 				) : null}
-				<Map events={events} />
+				<Map
+					events={events}
+					address={address}
+					latitude={latitude}
+					longitude={longitude}
+					timestamp={timestamp}
+					accuracy={accuracy}
+				/>
 			</div>
 			<BottomBar onChange={onQueryChange} query={query} toggleSettings={toggleSettings} />
 		</>
