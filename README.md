@@ -1,13 +1,15 @@
-# [Create React App] Basic Template
+# Mappy
 
 ## Commands
 
-### Update the template
+### Install dependencies
 
-```yarn publish```
+```yarn``` or ```npm install```
 
-#### Remember to change the version in the package.json
+### Launch the project
 
-### Use the template
+```yarn start``` or ```npm run start```
 
-```npx create-react-app my-app --template basic```
+### Demo
+
+Use on mobile : <https://mappy-0000.firebaseapp.com/>
