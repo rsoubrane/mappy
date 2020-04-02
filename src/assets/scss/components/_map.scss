@@ -5,6 +5,9 @@ $red: #ee5487;
 .leaflet-popup-content-wrapper {
 	width: 75vw;
 	margin: auto 12.5vw;
+	border-radius: 19px !important;
+	border: none;
+
 	.leaflet-popup-content {
 		width: 100%;
 		margin: auto;
@@ -17,10 +20,11 @@ $red: #ee5487;
 	display: inline-block;
 	margin: auto;
 	background: white;
-	border-radius: $border-radius-size + 5;
+	border-radius: 19px;
 	text-align: center;
 	box-shadow: -1px 15px 30px -12px black;
 	z-index: 9999;
+	border: none;
 }
 
 .card__image {
