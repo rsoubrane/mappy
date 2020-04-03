@@ -71,6 +71,15 @@ const useStyles = makeStyles(theme => ({
 			height: "3.5rem",
 			width: "3.5rem"
 		}
+	},
+	"@media (min-width: 378px)": {
+		appBar: {
+			width: "calc(100vw - 250px)"
+		},
+		icon: {
+			height: "5rem",
+			width: "5rem"
+		}
 	}
 }));
 

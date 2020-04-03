@@ -150,9 +150,7 @@ export default function MyMap({ events, address, latitude, longitude, timestamp,
 	}, [events, address, latitude, longitude, timestamp, accuracy]);
 
 	return (
-		<Map
-			center={latitude && longitude ? [latitude, longitude] : [48.8566, 2.3522]}
-			zoom={latitude && longitude ? 10 : 11}>
+		<Map center={[48.8566, 2.3522]} zoom={11}>
 			<LayersControl position='topright'>
 				<LayersControl.BaseLayer name='Mapbox Custom'>
 					<TileLayer url='https://api.mapbox.com/styles/v1/rsoub/ck8db1kuz0vzp1iocagbpz0nn/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWVua29tcCIsImEiOiJjanR1NGFuYjkxMmNvNDBucGI1aXZ4Y285In0.hiSplFD5CODUd9yxRO_qkg' />

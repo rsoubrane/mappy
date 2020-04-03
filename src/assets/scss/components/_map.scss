@@ -4,7 +4,8 @@ $red: #ee5487;
 
 .leaflet-popup-content-wrapper {
 	width: 75vw;
-	margin: auto 12.5vw;
+	max-width: 300px;
+	margin: auto;
 	border-radius: 19px !important;
 	border: none;
 

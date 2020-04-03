@@ -57,7 +57,7 @@ function ResponsiveDrawer(props) {
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
 	const handleDrawerToggle = () => {
-		setMobileOpen(!mobileOpen);
+		if (window.innerWidth < 378) setMobileOpen(!mobileOpen);
 	};
 
 	const handleOnClick = query => {
